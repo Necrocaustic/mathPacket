@@ -7,21 +7,24 @@ def cosines():
         sidea = float(input('What is the length of side A?'))
         sideb = float(input('What is the length of side B?'))
         sidec = float(input('What is the length of side C?'))
-        angleARads = math.acos(((sideb ** 2) + (sidec ** 2) - (sidea ** 2)) / (-2 * sideb * sidec))
-        angleBRads = math.acos(((sidea ** 2) + (sidec ** 2) - (sideb ** 2)) / (-2 * sidea * sidec))
-        angleCRads = math.acos(((sideb ** 2) + (sidea ** 2) - (sidec ** 2)) / (-2 * sideb * sidea))
+        angleARads = math.acos(((sideb ** 2) + (sidec ** 2) - (sidea ** 2)) / (2 * sideb * sidec))
+        angleBRads = math.acos(((sidea ** 2) + (sidec ** 2) - (sideb ** 2)) / (2 * sidea * sidec))
+        angleCRads = math.acos(((sideb ** 2) + (sidea ** 2) - (sidec ** 2)) / (2 * sideb * sidea))
         angleA = math.degrees(angleARads)
         angleB = math.degrees(angleBRads)
         angleC = math.degrees(angleCRads)
         print(f'Side A: {sidea} | Side B: {sideb} | Side C: {sidec}')
         print(f'Angle A: {angleA} | Angle B: {angleB} | Angle C: {angleC}')
+
     else:
         sidea = float(input('What is the length of side A?'))
         sideb = float(input('What is the length of side B?'))
         angleC = float(input('What is the value of Angle C (in deg.)?'))
         angleCRads = math.radians(angleC)
         sidec = math.sqrt((sidea ** 2) + (sideb ** 2) - (2 * sidea * sideb * math.cos(angleCRads)))
-        print(f'The length of the remaining side is: {sidec}')
+        angles = callCosSide(sidea, sideb, sidec)
+        print(f'Side A: {sidea} | Side B: {sideb} | Side C: {sidec}')
+        print(f'Angle A: {angles[0]} | Angle B: {angles[1]} | Angle C: {angles[2]}')
 
 
 def sines():
@@ -45,9 +48,9 @@ def sines():
 
 
 def callCosSide(sidea, sideb, sidec):
-    angleARads = math.acos(((sideb ** 2) + (sidec ** 2) - (sidea ** 2)) / (-2 * sideb * sidec))
-    angleBRads = math.acos(((sidea ** 2) + (sidec ** 2) - (sideb ** 2)) / (-2 * sidea * sidec))
-    angleCRads = math.acos(((sideb ** 2) + (sidea ** 2) - (sidec ** 2)) / (-2 * sideb * sidea))
+    angleARads = math.acos(((sideb ** 2) + (sidec ** 2) - (sidea ** 2)) / (2 * sideb * sidec))
+    angleBRads = math.acos(((sidea ** 2) + (sidec ** 2) - (sideb ** 2)) / (2 * sidea * sidec))
+    angleCRads = math.acos(((sideb ** 2) + (sidea ** 2) - (sidec ** 2)) / (2 * sideb * sidea))
     angleA = math.degrees(angleARads)
     angleB = math.degrees(angleBRads)
     angleC = math.degrees(angleCRads)

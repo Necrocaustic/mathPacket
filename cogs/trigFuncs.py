@@ -1,6 +1,9 @@
 # trig funcs through user gateway here
 import math
 
+
+# Be aware this whole thing is kind of scuffed and not fully complete
+# I recommend just memorizing the unit circle or using a calculator, you will get the same answer.
 def trigFuncs():
     trigOrUnitCircle = input('Do you need a unit circle or exact trig?')
     if trigOrUnitCircle == 'trig' or 'exact trig':
