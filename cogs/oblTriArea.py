@@ -21,7 +21,7 @@ def SSS():
     sidea = float(input('What is the length of the first side?'))
     sideb = float(input('What is the length of the second side?'))
     sidec = float(input('What is the length of the third side?'))
-    angles = callCosSide(sidea, sideb, sidec)
+    angles = callCosAngle(sidea, sideb, sidec)
     print(SumOfSides(sidea, sideb, sidec))
     print(f'Side A: {sidea} | Side B: {sideb} | Side C: {sidec}')
     print(f'Angle A: {angles[0]} | Angle B: {angles[1]} | Angle C: {angles[2]}')
@@ -66,7 +66,7 @@ def SAS():
     angleBRads = math.radians(angleB)
     sideb = math.sqrt((sidea ** 2) + (sidec ** 2) - (2 * sidea * sidec * math.cos(angleBRads)))
     print(SumOfSides(sidea, sideb, sidec))
-    angles = callCosSide(sidea, sideb, sidec)
+    angles = callCosAngle(sidea, sideb, sidec)
     print(f'Side A: {sidea} | Side B: {sideb} | Side C: {sidec}')
     print(f'Angle A: {angles[0]} | Angle B: {angles[1]} | Angle C: {angles[2]}')
 
